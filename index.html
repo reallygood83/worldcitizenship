@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1단원 - 세계시민교육</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>1단원 - 학생용 학습지</h1>
+        <p>세계시민교육: 휴대폰을 통해 배우는 세계와의 연결</p>
+    </header>
+    
+    <div class="activity-box">
+        <div class="activity-header">
+            <div class="activity-icon">1</div>
+            <div class="activity-title">휴대폰 부품의 명칭과 원료, 생산국을 찾아봅시다</div>
+        </div>
+        
+        <p>휴대폰 부품의 명칭과 원료를 확인하고, 생산국을 찾아보세요.</p>
+        
+        <div class="phone-container">
+            <div class="phone-front">
+                <img src="images/phone-front.svg" alt="휴대폰 앞면" class="phone-img">
+                <div class="marker" style="top: 25%; left: 80%;" onmouseover="showInfo('B')">B</div>
+                <div class="marker" style="bottom: 20%; left: 50%;" onmouseover="showInfo('A')">A</div>
+                <div id="info-B" class="component-info">터치스크린: 스마트폰의 주요 입력 장치</div>
+                <div id="info-A" class="component-info">홈 버튼: 메인 화면으로 이동</div>
+            </div>
+            
+            <div class="phone-back">
+                <img src="images/phone-back.svg" alt="휴대폰 내부" class="phone-img">
+                <div class="marker" style="top: 30%; right: 20%;" onmouseover="showInfo('E')">E</div>
+                <div class="marker" style="bottom: 40%; left: 30%;" onmouseover="showInfo('F')">F</div>
+                <div class="marker" style="bottom: 60%; left: 50%;" onmouseover="showInfo('D')">D</div>
+                <div id="info-E" class="component-info">카메라 모듈: 사진과 영상 촬영</div>
+                <div id="info-F" class="component-info">메모리 칩: 데이터 저장</div>
+                <div id="info-D" class="component-info">메인보드: 휴대폰의 두뇌 역할</div>
+            </div>
+        </div>
+        
+        <div class="battery-container" style="text-align: center; margin: 20px 0;">
+            <img src="images/battery.svg" alt="배터리" style="width: 100px; height: auto;">
+            <div class="marker" style="position: relative; display: inline-block; margin-left: -20px;" onmouseover="showInfo('C')">C</div>
+            <div id="info-C" class="component-info" style="position: relative;">배터리: 전원 공급</div>
+        </div>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>부품</th>
+                        <th>주요 원료</th>
+                        <th>주요 생산국</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>A. 홈 버튼</td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                    </tr>
+                    <tr>
+                        <td>B. 터치스크린</td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                    </tr>
+                    <tr>
+                        <td>C. 배터리</td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                    </tr>
+                    <tr>
+                        <td>D. 메인보드</td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                    </tr>
+                    <tr>
+                        <td>E. 카메라 모듈</td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                    </tr>
+                    <tr>
+                        <td>F. 메모리 칩</td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                        <td><input type="text" class="input-box" style="width: 90%"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <button class="button" onclick="saveActivity1()">저장하기</button>
+    </div>
+    
+    <div class="activity-box">
+        <div class="activity-header">
+            <div class="activity-icon">2</div>
+            <div class="activity-title">내가 생각하는 세계시민의 태도는 어떤 것입니까?</div>
+        </div>
+        
+        <p>필요한 순서대로 순위를 매겨 보세요.</p>
+        
+        <ul class="attitude-list" id="attitude-list">
+            <li class="attitude-item" draggable="true" ondragstart="drag(event)" id="attitude1">세계 여러 곳의 사람들이 연결되어 있다는 것을 안다.</li>
+            <li class="attitude-item" draggable="true" ondragstart="drag(event)" id="attitude2">다른 곳에서 일어나는 문제도 나의 삶에 영향을 줄 수 있음을 안다.</li>
+            <li class="attitude-item" draggable="true" ondragstart="drag(event)" id="attitude3">굶주림, 자연재해, 전쟁 등으로 고통 받는 사람들의 아픔에 공감한다.</li>
+            <li class="attitude-item" draggable="true" ondragstart="drag(event)" id="attitude4">세계시민으로서 지구촌 문제에 책임감을 가지고 해결하려는 마음을 갖는다.</li>
+            <li class="attitude-item" draggable="true" ondragstart="drag(event)" id="attitude5">열린 마음으로 세계의 다양한 문화를 받아들이고 세계 여러 나라 사람들과 협동한다.</li>
+            <li class="attitude-item" draggable="true" ondragstart="drag(event)" id="attitude6">더 살기 좋은 세계를 만들기 위해 어떻게 행동할지 생각해 보고 이를 실천하기 위해 노력한다.</li>
+        </ul>
+        
+        <p>내가 정한 우선순위:</p>
+        <div class="drop-container" id="ranked-list" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        
+        <button class="button" onclick="saveActivity2()">저장하기</button>
+    </div>
+    
+    <div class="activity-box">
+        <div class="activity-header">
+            <div class="activity-icon">3</div>
+            <div class="activity-title">우리 모둠이(내가) 생각하는 세계시민은</div>
+        </div>
+        
+        <textarea class="input-box" id="global-citizen-definition" placeholder="세계시민은 어떤 사람인지 정의해 보세요."></textarea>
+        <p>하는 사람입니다.</p>
+        
+        <button class="button" onclick="saveActivity3()">저장하기</button>
+    </div>
+    
+    <div style="text-align: center; margin: 30px 0;">
+        <button class="button" style="background-color: #f44336;" onclick="resetAllData()">모든 데이터 초기화</button>
+    </div>
+    
+    <footer>
+        <p>© 2024 세계시민 교육 - 휴대폰을 통해 배우는 세계와의 연결</p>
+        <p>이 교재는 세계시민 교육에 대한 이해를 높이고 지구촌 문제 해결에 기여하기 위해 제작되었습니다.</p>
+    </footer>
+    
+    <script src="js/app.js"></script>
+</body>
+</html> 
